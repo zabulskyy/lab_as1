@@ -51,38 +51,28 @@ int main(){
 # endif
 
 
-
-
-
-
-
-
-
-
 #if 1
+
 #include <iostream>
 #include <limits>
 
 using namespace std;
 
-template <typename  T, size_t N = 10>
-T digits_sum(T n)
-{
+template<typename T, size_t N = 10>
+T digits_sum(T n) {
     T res = 0;
-    while(n!=0)
-    {
+    while (n != 0) {
         res += n % N;
         n /= N;
     }
     return res;
 }
 
-int main()
-{
+int main() {
 #if 1
     volatile unsigned long long log_r = 0;
     //for(unsigned long long i = 0; i<std::numeric_limits<decltype(i)>::max(); ++i)
-    for(unsigned long long i = 0; i<100000; ++i) {
+    for (unsigned long long i = 0; i < 100000; ++i) {
         auto r1 = digits_sum(i);;
         if (i % 10000 == 0)
             cout << ".";
